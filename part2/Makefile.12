@@ -1,0 +1,31 @@
+CC=gcc
+MP=m4
+CFLAGS=-c
+LFLAGS=-o
+
+asn4: asn4.o myfadd.o stringio.o iofunc.o
+	$(CC) $(LFLAGS) asn4 asn4.o myfadd.o stringio.o iofunc.o
+
+stringio.o: stringio.s
+	$(CC) $(CFLAGS) stringio.s
+
+asn4.o: asn4.s
+	$(CC) $(CFLAGS) asn4.s
+
+asn4.s:	asn4.m
+	-rm asn4.s
+	$(MP) asn4.m > asn4.s
+
+myfadd.o: myfadd.s
+	$(CC) $(CFLAGS) myfadd.s
+
+myfadd.s: myfadd.m
+	-rm myfadd.s
+	$(MP) myfadd.m > myfadd.s
+
+realclean: clean
+	-rm asn4
+
+clean:
+	-rm asn4.s
+	-rm asn4.o stringio.o

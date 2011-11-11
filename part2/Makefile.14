@@ -1,0 +1,17 @@
+asn4: asn4.o myfadd.o stringio.o iofunc.o
+	gcc -o asn4 $^
+
+%.o: %.s
+	gcc -c $<
+
+%.s: %.m
+	-rm $@
+	m4 $< > $@
+
+realclean: clean
+	-rm asn4
+
+clean:
+	-rm asn4.s
+	-rm asn4.o myfadd.o stringio.o
+

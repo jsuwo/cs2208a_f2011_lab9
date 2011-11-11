@@ -1,0 +1,19 @@
+####
+#
+# Run this on obelix using gmake.
+# Otherwise, $< will be empty when printed.
+#
+####
+target: dependency1 dependency2
+	@echo "target: asn4.m dependency1 dependency2"
+	@echo 
+	@echo "    Special macros:"
+	@echo '        $$@ = $@'
+	@echo '        $$< = $<'
+	@echo '        $$^ = $^'
+
+dependency1:
+
+dependency2:
+
+

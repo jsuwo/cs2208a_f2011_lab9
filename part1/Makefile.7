@@ -1,0 +1,12 @@
+asn4: asn4.o stringio.o iofunc.o
+	gcc -o asn4 asn4.o stringio.o iofunc.o
+
+stringio.o: stringio.s
+	gcc -c stringio.s
+
+asn4.o: asn4.s
+	gcc -c asn4.s
+
+asn4.s:	asn4.m
+	-rm asn4.s
+	m4 asn4.m > asn4.s
