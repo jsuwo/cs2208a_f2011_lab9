@@ -26,3 +26,5 @@ Part 2
 * `Makefile.14`: Inference rules
 * `Makefile.15`: Using inference rules to build assignment 4
 * `Makefile.16`: A commented, (mostly) finished Makefile to build assignment 4 (what's missing?)
+* `Makefile.17`: Adding a `debug` target
+* `Makefile.18`: Getting a little DRY-er

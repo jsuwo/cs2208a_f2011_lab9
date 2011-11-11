@@ -16,9 +16,13 @@ CC=gcc
 MP=m4
 CFLAGS=-c
 LFLAGS=-o
+DFLAGS=-g $(LFLAGS) 
 
 asn4: asn4.o myfadd.o stringio.o iofunc.o
 	$(CC) $(LFLAGS) asn4 $^
+
+debug: asn4.o myfadd.o stringio.o iofunc.o
+	$(CC) $(DFLAGS) asn4 $^
 
 %.o: %.s
 	$(CC) $(CFLAGS) $<

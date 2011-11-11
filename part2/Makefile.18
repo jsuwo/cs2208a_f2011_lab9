@@ -16,9 +16,14 @@ CC=gcc
 MP=m4
 CFLAGS=-c
 LFLAGS=-o
+DFLAGS=-g $(LFLAGS) 
+OBJ_FILES=asn4.o myfadd.o stringio.o iofunc.o
 
-asn4: asn4.o myfadd.o stringio.o iofunc.o
+asn4: $(OBJ_FILES) 
 	$(CC) $(LFLAGS) asn4 $^
+
+debug: $(OBJ_FILES) 
+	$(CC) $(DFLAGS) asn4 $^
 
 %.o: %.s
 	$(CC) $(CFLAGS) $<
