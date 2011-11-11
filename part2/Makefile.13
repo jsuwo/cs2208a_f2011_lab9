@@ -5,7 +5,7 @@
 #
 ####
 target: dependency1 dependency2
-	@echo "target: asn4.m dependency1 dependency2"
+	@echo "target: dependency1 dependency2"
 	@echo 
 	@echo "    Special macros:"
 	@echo '        $$@ = $@'
