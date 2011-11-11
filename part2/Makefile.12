@@ -28,4 +28,4 @@ realclean: clean
 
 clean:
 	-rm asn4.s myfadd.s
-	-rm asn4.o stringio.o
+	-rm asn4.o myfadd.o stringio.o
